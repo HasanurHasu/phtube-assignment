@@ -27,8 +27,19 @@ const videosInfo = data.data;
 const videoContainer = document.getElementById('video-container');
 videoContainer.innerHTML = "";
 
+if(videosInfo.length == 0){
+    videoContainer.classList.remove('grid')
+    videoContainer.innerHTML = `
+    <div class="flex flex-col items-center justify-center mt-20">
+    <img src="./images/Icon.png" alt="">
+    <h1 class="text-black text-3xl font-bold text-center">Oops!! Sorry, There is no <br> content here</h1>
+</div
+    `;
+}
+
 videosInfo.forEach(video => {
     console.log(video);
+    videoContainer.classList.add('grid')
     const videoDiv = document.createElement('div');
     videoDiv.innerHTML = `
     <div class="hero w-76 rounded-lg  h-44 flex justify-end items-end" style="background-image: url(${video.thumbnail}); background-size: cover;">

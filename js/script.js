@@ -45,7 +45,7 @@ videosInfo.forEach(video => {
     <div class="space-y-1">
         <h1 class="text-base font-bold">${video.title}</h1>
         <div class="flex justify-start gap-2 ">
-            <h3 class="text-sm font-normal">${video.authors[0].profile_name}</h3><span></span>
+            <h3 class="text-sm font-normal">${video.authors[0].profile_name}</h3><span>${video.authors[0].verified? '<img src="./images/verified.svg" alt=""></img>': "" }</span>
         </div>
         <p class="text-sm font-normal">${video.others.views}</p>
     </div>

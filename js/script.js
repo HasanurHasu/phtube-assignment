@@ -31,9 +31,11 @@ const handleVideos = async (categoryId) => {
         if (sortedData.length == 0) {
             videoContainer.classList.remove('grid')
             videoContainer.innerHTML = `
-        <div class="flex flex-col items-center justify-center mt-20">
-        <img src="./images/Icon.png" alt="">
-        <h1 class="text-black text-3xl font-bold text-center">Oops!! Sorry, There is no <br> content here</h1>
+        <div class="flex flex-col items-center col-span-4 justify-center mt-20">
+       <div class="flex flex-col justify-center items-center space-y-6">
+       <img src="./images/Icon.png" alt="">
+       <h1 class="text-black text-3xl font-bold text-center">Oops!! Sorry, There is no <br> content here</h1>
+       </div>
         </div
         `;
         }

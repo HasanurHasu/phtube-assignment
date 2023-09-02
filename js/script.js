@@ -27,7 +27,7 @@ const handleVideos = async (categoryId) => {
     const renderData = (sortedData) => {
         const videoContainer = document.getElementById('video-container');
         videoContainer.innerHTML = "";
-    
+
         if (sortedData.length == 0) {
             videoContainer.classList.remove('grid')
             videoContainer.innerHTML = `
@@ -37,10 +37,10 @@ const handleVideos = async (categoryId) => {
         </div
         `;
         }
-    
+
         sortedData.forEach(video => {
             // console.log(video);
-    
+
             videoContainer.classList.add('grid')
             const videoDiv = document.createElement('div');
             videoDiv.innerHTML = `
@@ -67,30 +67,30 @@ const handleVideos = async (categoryId) => {
             videoContainer.appendChild(videoDiv);
         })
     }
-    
-    
+
+
     const secondsToHoursMinute = (seconds) => {
-    
+
         seconds = Number(seconds);
         var h = Math.floor(seconds / 3600);
         var m = Math.floor(seconds % 3600 / 60);
-    
+
         var hoursDisplay = h + " hrs ";
         var minuteDisplay = m + " min ago";
-    
+
         return hoursDisplay + minuteDisplay;
-    
+
     }
-    
+
     function sortByViewsDescending() {
         const sortedData = [...videosInfo]; // Create a copy of the original data
         sortedData.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
         renderData(sortedData);
     }
-    
+
     const sortButton = document.getElementById("sort-by-views");
     sortButton.addEventListener("click", sortByViewsDescending);
-    
+
     renderData(videosInfo)
 
 }
@@ -100,4 +100,5 @@ loadVideo();
 const blogBtn = document.getElementById('blog-btn');
 blogBtn.addEventListener('click', function () {
     window.location.href = './blog.html'
-})
+});
+

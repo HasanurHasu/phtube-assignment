@@ -37,32 +37,34 @@ const handleVideos = async (categoryId) => {
         </div
         `;
         }
-
+        const posteDate = document.getElementById('poste-date')
         sortedData.forEach(video => {
             // console.log(video);
 
             videoContainer.classList.add('grid')
             const videoDiv = document.createElement('div');
             videoDiv.innerHTML = `
-        <div class="hero w-76 rounded-lg  h-44 flex justify-end items-end" style="background-image: url(${video.thumbnail}); background-size: cover;">
-        <div id="poste-date" class="mb-3 mr-2 ">
-            <span class="text-white text-xs py-2 px-2 rounded-md bg-[#171717]">${video.others.posted_date ? secondsToHoursMinute(video.others.posted_date) : ""}</span>
-        </div>
-    </div>
-    <div class="flex justify-start items-start gap-3 mt-3">
-        <div class="avatar">
-            <div class="w-12 rounded-full">
-                <img src=${video.authors[0].profile_picture} />
+            <div class="card">
+            <div class=" rounded-lg w-96 h-52 md:w-60 md:h-36 lg:w-72 lg:h-44 flex justify-end items-end" style="background-image: url(${video.thumbnail}); background-size: cover;">
+            <div  class="mb-3 mr-2 ">
+                <p id="poste-date" class="text-white text-xs py-2  rounded-md bg-[#171717]">${video.others.posted_date ? secondsToHoursMinute(video.others.posted_date) : ""}</p>
             </div>
         </div>
-        <div class="space-y-1">
-            <h1 class="text-base font-bold">${video.title}</h1>
-            <div class="flex justify-start gap-2 ">
-                <h3 class="text-sm font-normal">${video.authors[0].profile_name}</h3><span>${video.authors[0].verified ? '<img src="./images/verified.svg" alt=""></img>' : ""}</span>
+        <div class="flex justify-start items-start gap-3 mt-3">
+            <div class="avatar">
+                <div class="w-12 rounded-full">
+                    <img src=${video.authors[0].profile_picture} />
+                </div>
             </div>
-            <p class="text-sm font-normal">${video.others.views}</p>
+            <div class="space-y-1">
+                <h1 class="text-base font-bold">${video.title}</h1>
+                <div class="flex justify-start gap-2 ">
+                    <h3 class="text-sm font-normal">${video.authors[0].profile_name}</h3><span>${video.authors[0].verified ? '<img src="./images/verified.svg" alt=""></img>' : ""}</span>
+                </div>
+                <p class="text-sm font-normal">${video.others.views}</p>
+            </div>
         </div>
-    </div>
+            </div>
         `
             videoContainer.appendChild(videoDiv);
         })
@@ -76,7 +78,7 @@ const handleVideos = async (categoryId) => {
         var m = Math.floor(seconds % 3600 / 60);
 
         var hoursDisplay = h + " hrs ";
-        var minuteDisplay = m + " min ago";
+        var minuteDisplay = m + " min ago ";
 
         return hoursDisplay + minuteDisplay;
 

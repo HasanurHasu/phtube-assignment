@@ -41,15 +41,48 @@
 
             <div>
                 <div>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                          <img src="./images/var-let-and-const.jpg" alt="Shoes" class="rounded-xl" />
-                        </figure>
+                    <div class="card bg-base-100 shadow-xl">
                         <div class="card-body items-left text-left">
-                          <h2 class="card-title">Discuss the scope of var, let, and const!</h2>
-                          <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <h2 class="card-title">Discuss the scope of var, let, and const!</h2>
+                            <p>
+                                var, let, and const are JavaScript variable declaration keywords with different scopes
+                                and behaviors.
+
+                            </p>
+                            <p>var: Has function-level scope, allowing it to be accessed anywhere within the function
+                                in which it's declared. It's also hoisted, meaning it's moved to the top of its scope
+                                during execution.</p>
+                            <p> let: Has block-level scope, making it accessible only within the block (e.g., within
+                                loops or conditional statements) where it's defined. It's also not hoisted, so it must
+                                be declared before use.</p>
+                            <p>const: Also has block-level scope but is used for constants that cannot be reassigned
+                                after declaration. Like let, it's not hoisted and must be initialized when declared.</p>
                         </div>
-                      </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-xl">
+                        <div class="card-body items-left text-left">
+                            <h2 class="card-title">Tell us the use cases of null and undefined</h2>
+                            <p>Null and undefined are used in JavaScript to represent missing or empty values. Null is
+                                explicitly assigned to a variable to indicate the absence of a value. Undefined
+                                typically occurs when a variable is declared but not initialized. Use cases include
+                                error handling, checking if a value exists, and initializing variables.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl">
+                        <div class="card-body items-left text-left">
+                            <h2 class="card-title">What do you mean by REST API?</h2>
+                            <p>REST (Representational State Transfer) API is an architectural style for designing
+                                networked applications. It uses a set of constraints to create a lightweight and
+                                scalable web service. REST APIs use HTTP methods like GET, POST, PUT, and DELETE to
+                                perform CRUD (Create, Read, Update, Delete) operations on resources, represented as
+                                URLs. They follow the client-server model, are stateless, and support caching. REST APIs
+                                are widely used for building web services that allow different systems to communicate
+                                and share data over the internet in a simple and standardized way, making them a
+                                fundamental part of web development.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

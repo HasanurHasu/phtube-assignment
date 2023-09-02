@@ -8,9 +8,9 @@ const loadVideo = async () => {
 
     data.forEach(category => {
         console.log(category);
-        const tapDiv = document.createElement('a');
+        const tapDiv = document.createElement('div');
         tapDiv.innerHTML = `<button onclick="handleVideos('${category.category_id}')"
-        class="btn text-[#171717B2] bg-[#25252526] text-[#252525] rounded-md hover:bg-[#FF1F3D] hover:text-white">${category.category}</button>`
+        class="btn text-[#171717B2] bg-[#25252526] text-[#252525] rounded-md hover:bg-[#FF1F3D] hover:text-white focus:bg-[#FF1F3D] focus:text-[white]">${category.category}</button>`
         tapContainer.appendChild(tapDiv)
     });
 
@@ -94,6 +94,10 @@ const handleVideos = async (categoryId) => {
     renderData(videosInfo)
 
 }
-
+handleVideos(1000)
 loadVideo();
 
+const blogBtn = document.getElementById('blog-btn');
+blogBtn.addEventListener('click', function () {
+    window.location.href = './blog.html'
+})
